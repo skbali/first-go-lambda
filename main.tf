@@ -1,3 +1,8 @@
+provider "aws" {
+  region  = "us-east-1"
+  profile = "automation"
+}
+
 data "archive_file" "running_ec2_zip" {
   type        = "zip"
   output_path = "./running-ec2/running_ec2.zip"
