@@ -7,15 +7,15 @@ data "archive_file" "running_ec2_zip" {
   type        = "zip"
   output_path = "./running-ec2/running_ec2.zip"
 
-  source_file = "./running-ec2/code/main"
+  source_file = "./running-ec2/code/bootstrap"
 }
 
 resource "aws_lambda_function" "running_ec2" {
   function_name = "first-go-lambda"
-  handler       = "main"
+  handler       = "bootstrap"
   role          = aws_iam_role.first_go_lambda_role.arn
 
-  runtime          = "go1.x"
+  runtime          = "provided.al2"
   timeout          = 120
   memory_size      = 128
   filename         = data.archive_file.running_ec2_zip.output_path

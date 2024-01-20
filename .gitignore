@@ -36,4 +36,4 @@ override.tf.json
 *.iml
 *.iws
 /.terraform/
-/running-ec2/code/main
+/running-ec2/code/bootstrap
