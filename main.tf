@@ -1,6 +1,6 @@
 provider "aws" {
   region  = "us-east-1"
-  profile = "automation"
+  profile = "default"
 }
 
 data "archive_file" "running_ec2_zip" {

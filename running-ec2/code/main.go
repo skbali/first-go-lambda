@@ -54,7 +54,6 @@ func HandleRequest() ([]string, error) {
 			break
 		}
 		nextToken = result.NextToken
-
 	}
 
 	fmt.Println(status)
